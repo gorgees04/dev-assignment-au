@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -104,4 +104,180 @@ a {
   html {
     color-scheme: dark;
   }
+} */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin: auto;
+  background-color: #ffffff;
+  min-width: 370px;
+  height: 326px;
+  margin-top: 85px;
+  margin-left: 104px;
+  margin-right: 104px;
+  font-size: 14px;
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 6px;
+  box-shadow: 0px 8px 15px 0px rgba(20, 20, 20, 0.12);
+  box-shadow: 0px 0px 4px 0px rgba(20, 20, 20, 0.1);
+  padding: 10px 5px;
+}
+
+.pages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.page-field {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  padding: 8px 22px;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 1px solid rgba(238, 238, 238, 1); */
+  box-sizing: border-box;
+}
+
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: left;
+  color: rgba(31, 33, 40, 0.756);
+  opacity: 0px;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  left: 20px;
+  gap: 0px;
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 6px;
+  list-style: none;
+  /* background-color: rgba(36, 105, 246, 1); */
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.checkbox:hover {
+  border: 1px solid rgb(205, 203, 203);
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgba(227, 227, 227, 1);
+}
+
+.checkbox:active {
+  border: 1px solid rgb(205, 203, 203);
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgba(135, 135, 135, 1);
+  box-shadow: 0 0 0 3px rgb(208 205 205 / 50%);
+  border-radius: 6px;
+  border: 1px solid rgb(208 205 205 / 20%);
+  border-radius: 6px;
+}
+
+.checkbox-checked {
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  left: 20px;
+  gap: 0px;
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 6px;
+  list-style: none;
+  background-color: rgba(36, 105, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.checkbox-checked:hover {
+  border: 1px solid rgb(205, 203, 203);
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgba(227, 227, 227, 1);
+  background-color: rgba(80, 135, 248, 1);
+}
+
+.checkbox-checked:active {
+  border: 1px solid rgb(205, 203, 203);
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 0 3px rgb(208 205 205 / 50%);
+  border-radius: 6px;
+  border: 1px solid rgb(208 205 205 / 20%);
+  border-radius: 6px;
+}
+
+.divider {
+  width: 340px;
+  height: 0px;
+  border: 0.7px 0px 0px 0px;
+  opacity: 0px;
+  border: 0.7px solid rgba(205, 205, 205, 1);
+  border-radius: 6px;
+  margin: 12px 15px;
+}
+
+/* Hide the default checkbox */
+
+/* .checkbox:hover {
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(238, 238, 238, 1);
+  border-radius: 6px;
+} */
+
+/* Style the custom checkbox */
+/* .checkbox + label {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 1);
+
+} */
+
+/* Style the checked state */
+/* .checkbox:checked + label {
+  background-color: rgba(36, 105, 246, 1);
+  border-color: rgba(36, 105, 246, 1);
+} */
+
+/* .checkbox:checked + label::after {
+  transform: translate(-50%, -50%) scale(1);
+} */
