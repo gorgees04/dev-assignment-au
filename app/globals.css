@@ -188,3 +188,7 @@ main {
   cursor: pointer;
   padding: 10px 15px;
 }
+
+.btn:hover {
+  background-color: rgba(255, 216, 77, 1);
+}
