@@ -1,7 +1,72 @@
 "use client";
-import styles from "./page.module.css";
+import Btn from "@/components/Btn";
+import DividerLine from "@/components/DividerLine";
 import PageField from "@/components/PageField";
 import { useState } from "react";
+
+export default function Home() {
+  // state
+  const [pages, setPages] = useState(data);
+  const [allPages, setAllPages] = useState({
+    text: "All pages",
+    checked: false,
+  });
+
+  // functions
+
+  // function to handle checked changes
+  const handleCheckedChanges = (value, id) => {
+    setPages((prevPages) =>
+      prevPages.map((prevPage) =>
+        prevPage.id === id ? { ...prevPage, checked: value } : prevPage
+      )
+    );
+  };
+
+  // function to handle check all pages
+  const handleCheckAllPages = (value) => {
+    setPages((prevPages) =>
+      prevPages.map((prevPage) => ({ ...prevPage, checked: value }))
+    );
+    setAllPages((prevAllPages) => ({
+      ...prevAllPages,
+      checked: !prevAllPages.checked,
+    }));
+  };
+
+  return (
+    <main className="main">
+      <section className="container">
+        {/* Head Field */}
+        <PageField
+          page={allPages}
+          setChecked={(value) => handleCheckAllPages(value)}
+        />
+
+        <DividerLine />
+
+        {/* Pages Field */}
+        <div className="pages-container">
+          {pages?.length > 0 &&
+            pages.map((page) => (
+              <PageField
+                key={page.id}
+                page={page}
+                setChecked={(value) => handleCheckedChanges(value, page.id)}
+              />
+            ))}
+        </div>
+
+        <DividerLine />
+
+        {/* Done Button */}
+        <div className="btn-container">
+          <Btn text="Done" />
+        </div>
+      </section>
+    </main>
+  );
+}
 
 const data = [
   {
@@ -45,52 +110,3 @@ const data = [
     checked: false,
   },
 ];
-
-export default function Home() {
-  const [pages, setPages] = useState(data);
-  const [allPages, setAllPages] = useState({
-    text: "All pages",
-    checked: false,
-  });
-
-  const handleCheckedChanges = (value, id) => {
-    setPages((prevPages) =>
-      prevPages.map((prevPage) =>
-        prevPage.id === id ? { ...prevPage, checked: value } : prevPage
-      )
-    );
-  };
-
-  const handleCheckAllPages = (value) => {
-    setPages((prevPages) =>
-      prevPages.map((prevPage) => ({ ...prevPage, checked: value }))
-    );
-    setAllPages((prevAllPages) => ({
-      ...prevAllPages,
-      checked: !prevAllPages.checked,
-    }));
-  };
-
-  return (
-    <main className={styles.main}>
-      <section className="container">
-        <PageField
-          page={allPages}
-          setChecked={(value) => handleCheckAllPages(value)}
-        />
-        <div className="divider"></div>
-        <div className="pages-container">
-          {pages?.length > 0 &&
-            pages.map((page) => (
-              <PageField
-                key={page.id}
-                page={page}
-                setChecked={(value) => handleCheckedChanges(value, page.id)}
-              />
-            ))}
-        </div>
-        <div className="divider"></div>
-      </section>
-    </main>
-  );
-}
